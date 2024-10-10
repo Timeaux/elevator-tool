@@ -1,7 +1,6 @@
 import { updateModelMaterial, startCameraAnimation } from './utils.js';
 
 export default function (
-  currentMaterial,
   elevatorGroup,
   materials,
   controls,
@@ -12,28 +11,22 @@ export default function (
 ) {
   // Event listeners for material change
   document.getElementById('material1').addEventListener('click', () => {
-    currentMaterial = materials.metalTexture;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, materials.metalTexture);
   });
   document.getElementById('material2').addEventListener('click', () => {
-    currentMaterial = materials.lightWoodTexture;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, materials.lightWoodTexture);
   });
   document.getElementById('material3').addEventListener('click', () => {
-    currentMaterial = materials.darkWoodTexture;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, materials.darkWoodTexture);
   });
   document.getElementById('material4').addEventListener('click', () => {
-    currentMaterial = materials.metalTexture2;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, materials.metalTexture2);
   });
   document.getElementById('material5').addEventListener('click', () => {
-    currentMaterial = materials.metalTexture3;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, materials.metalTexture3);
   });
   document.getElementById('material6').addEventListener('click', () => {
-    currentMaterial = materials.oakWoodTexture;
-    updateModelMaterial(elevatorGroup, currentMaterial);
+    updateModelMaterial(elevatorGroup, oakWoodTexture);
   });
 
   // Event listener for zoom slider

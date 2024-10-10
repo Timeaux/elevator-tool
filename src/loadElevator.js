@@ -5,7 +5,6 @@ export default function (
   camera,
   materials,
   animate,
-  currentMaterial,
   elevatorGroup,
   controls,
   cameraData,
@@ -22,12 +21,12 @@ export default function (
         // Set materials based on object type
         if (child.name.startsWith('Wall_')) {
           // Walls
-          child.material = currentMaterial.clone();
+          child.material = materials.metalTexture;
           child.material.side = THREE.BackSide; // Render only outside faces
           child.renderOrder = 0;
         } else {
           // Other objects (handles, buttons, etc.)
-          child.material = currentMaterial.clone();
+          child.material = materials.metalTexture;
           child.material.side = THREE.DoubleSide; // Render all faces
           child.renderOrder = 1;
         }

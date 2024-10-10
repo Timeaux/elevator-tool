@@ -7,6 +7,31 @@ const addOnComponentNames = [
   'Floor',
 ];
 
+export const rotationSpeed = 0.001;
+
+export const defaultCameraData = {
+  orig: 4,
+  isDetailZoomedIn: false, // To track Detail 1 zoom state
+  lastCameraPosition: new THREE.Vector3(), // To store the last camera position
+  lastCameraQuaternion: new THREE.Quaternion(), // To store the last camera orientation
+  cameraAnimationProgress: 0,
+  cameraAnimationDuration: 60, // Frames
+  cameraAnimationStartPosition: new THREE.Vector3(),
+  cameraAnimationEndPosition: new THREE.Vector3(),
+  cameraAnimationStartQuaternion: new THREE.Quaternion(),
+  cameraAnimationEndQuaternion: new THREE.Quaternion(),
+  isAnimatingCamera: false,
+  isAutoRotating: true,
+};
+
+// Wall normals (assuming model is axis-aligned and normals point outward)
+export const wallNormals = {
+  Wall_Front: new THREE.Vector3(0, 0, 1), // Front wall faces +Z
+  Wall_Back: new THREE.Vector3(0, 0, -1),
+  Wall_Left: new THREE.Vector3(1, 0, 0),
+  Wall_Right: new THREE.Vector3(-1, 0, 0),
+};
+
 // Easing function (easeInOutQuad)
 export function easeInOutQuad(t) {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
