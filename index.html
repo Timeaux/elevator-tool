@@ -96,15 +96,15 @@
             </div>
             <div class="accordion-content" id="metals-content">
                 <button id="material1">
-                    <img src="Assets/metal.jpg" alt="Metal">
+                    <img src="./Assets/metal.jpg" alt="Metal">
                     Metal
                 </button>
                 <button id="material4">
-                    <img src="Assets/metal2.jpg" alt="Metal 2">
+                    <img src="./Assets/metal2.jpg" alt="Metal 2">
                     Metal 2
                 </button>
                 <button id="material5">
-                    <img src="Assets/metal3.jpg" alt="Metal 3">
+                    <img src="./Assets/metal3.jpg" alt="Metal 3">
                     Metal 3
                 </button>
             </div>
@@ -118,15 +118,15 @@
             </div>
             <div class="accordion-content" id="woods-content">
                 <button id="material2">
-                    <img src="Assets/lightwood.jpg" alt="Light Wood">
+                    <img src="./Assets/lightwood.jpg" alt="Light Wood">
                     Light Wood
                 </button>
                 <button id="material3">
-                    <img src="Assets/darkwood.jpg" alt="Dark Wood">
+                    <img src="./Assets/darkwood.jpg" alt="Dark Wood">
                     Dark Wood
                 </button>
                 <button id="material6">
-                    <img src="Assets/oakwood.jpg" alt="Oak Wood">
+                    <img src="./Assets/oakwood.jpg" alt="Oak Wood">
                     Oak Wood
                 </button>
             </div>
@@ -166,16 +166,16 @@
         // Load textures
         const textureLoader = new THREE.TextureLoader();
 
-        const metalTexture = textureLoader.load('Assets/metal.jpg');
-        const metalTexture2 = textureLoader.load('Assets/metal2.jpg');
-        const metalTexture3 = textureLoader.load('Assets/metal3.jpg');
-        const lightWoodTexture = textureLoader.load('Assets/lightwood.jpg');
-        const darkWoodTexture = textureLoader.load('Assets/darkwood.jpg');
-        const oakWoodTexture = textureLoader.load('Assets/oakwood.jpg');
+        const metalTexture = textureLoader.load('./Assets/metal.jpg');
+        const metalTexture2 = textureLoader.load('./Assets/metal2.jpg');
+        const metalTexture3 = textureLoader.load('./Assets/metal3.jpg');
+        const lightWoodTexture = textureLoader.load('./Assets/lightwood.jpg');
+        const darkWoodTexture = textureLoader.load('./Assets/darkwood.jpg');
+        const oakWoodTexture = textureLoader.load('./Assets/oakwood.jpg');
 
         // Load boucle texture
-        const boucleTexture = textureLoader.load('Assets/Boucle.jpg');
-        const boucleNormalMap = textureLoader.load('Assets/Boucle_Normal.png');
+        const boucleTexture = textureLoader.load('./Assets/Boucle.jpg');
+        const boucleNormalMap = textureLoader.load('./Assets/Boucle_Normal.png');
 
         // Set texture wrapping and repeat for boucle texture
         boucleTexture.wrapS = boucleTexture.wrapT = THREE.RepeatWrapping;
@@ -185,9 +185,9 @@
         boucleNormalMap.repeat.set(4, 4);
 
         // Load copper textures
-        const copperColorTexture = textureLoader.load('Assets/Copper_Color.jpg');
-        const copperMetalnessTexture = textureLoader.load('Assets/Copper_Metalness.jpg');
-        const copperRoughnessTexture = textureLoader.load('Assets/Copper_Roughness.jpg');
+        const copperColorTexture = textureLoader.load('./Assets/Copper_Color.jpg');
+        const copperMetalnessTexture = textureLoader.load('./Assets/Copper_Metalness.jpg');
+        const copperRoughnessTexture = textureLoader.load('./Assets/Copper_Roughness.jpg');
 
         // Create the Copper Material
         const copperMaterial = new THREE.MeshStandardMaterial({
@@ -264,7 +264,7 @@
 
         // Load the GLTF model
         const gltfLoader = new THREE.GLTFLoader();
-        gltfLoader.load('Assets/elevator.glb', (gltf) => {
+        gltfLoader.load('./Assets/elevator.glb', (gltf) => {
             const elevator = gltf.scene;
 
             // Apply the current material to all child meshes
